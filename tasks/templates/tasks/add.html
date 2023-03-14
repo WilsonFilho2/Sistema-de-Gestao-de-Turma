@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add</title>
+</head>
+<body>
+    {% extends "tasks/layout.html" %}
+    {% block body %}
+        <h1>Add Task:</h1>
+        <form action="{% url 'add_tasks' %}" method="post">
+            {% csrf_token%}
+            {{  form  }}
+            <input type="submit">
+        </form>
+        <a href="{% url 'index_tasks' %}">Visualizar tarefas</a>
+    {% endblock %}
+</body>
+</html>
